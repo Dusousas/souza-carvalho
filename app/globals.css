@@ -1,0 +1,190 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --font-sans: var(--font-poppins);
+  --font-display: var(--font-playfair-display);
+
+  --color-AzulP: #1C355D;
+  --color-Douradop: #EDCF81;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-poppins), sans-serif;
+}
+
+.maxW{
+  max-width: 1420px;
+  margin: 0 auto;
+  padding: 0 2%;
+}
+
+h1,
+h2,
+h3,
+h4
+ {
+  font-family: var(--font-playfair-display), serif;
+}
+
+p{
+  font-family: var(--font-poppins), sans-serif;
+}
+
+.hero-cta {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.12) 35%,
+    rgba(255, 255, 255, 0.32) 48%,
+    transparent 62%
+  );
+  transform: translateX(-140%);
+  transition: transform 0.8s ease;
+}
+
+.hero-cta:hover::before {
+  transform: translateX(140%);
+}
+
+.hero-image-shell::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+  pointer-events: none;
+}
+
+.hero-float {
+  animation: heroFloat 6s ease-in-out infinite;
+}
+
+.hero-orb {
+  animation: heroDrift 10s ease-in-out infinite;
+}
+
+.hero-orb-delay {
+  animation: heroDrift 13s ease-in-out infinite reverse;
+}
+
+.hero-frame {
+  animation: heroPulse 7s ease-in-out infinite;
+}
+
+.hero-frame-delay {
+  animation: heroFloat 8s ease-in-out infinite;
+}
+
+.about-image-wrap {
+  position: relative;
+}
+
+.about-image-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 14px;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.22);
+  pointer-events: none;
+}
+
+.about-badge {
+  animation: heroFloat 7s ease-in-out infinite;
+}
+
+.about-ghost {
+  animation: aboutSpin 18s linear infinite;
+}
+
+.about-ghost-delay {
+  animation: heroFloat 9s ease-in-out infinite;
+}
+
+@keyframes heroFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes heroDrift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(12px, -14px, 0) scale(1.05);
+  }
+}
+
+@keyframes heroPulse {
+  0%,
+  100% {
+    opacity: 0.72;
+    box-shadow: 0 0 0 rgba(237, 207, 129, 0);
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 28px rgba(237, 207, 129, 0.12);
+  }
+}
+
+@keyframes aboutSpin {
+  0% {
+    transform: translateY(-50%) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-50%) rotate(360deg);
+  }
+}
+
+.bgHero1 {
+  background-image: url("/bg/hero1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.bgTeam {
+  background-image: url("/bg/team.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.bgTesti {
+  background-image: url("/bg/bgTesti.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
