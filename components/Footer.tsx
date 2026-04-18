@@ -6,17 +6,16 @@ import {
   FaInstagram,
   FaLinkedinIn,
   FaPhone,
-  FaRegClock,
   FaWhatsapp,
 } from "react-icons/fa6";
 
 const quickLinks = [
-  "Sobre nós",
-  "Serviços",
-  "Advogados",
-  "Processo",
-  "Depoimentos",
-  "Contato",
+  { label: "O escritório", href: "#escritorio" },
+  { label: "Áreas de atuação", href: "#atuacao" },
+  { label: "Nossa equipe", href: "#equipe" },
+  { label: "Missão, visão e valores", href: "#valores" },
+  { label: "Diferenciais", href: "#diferenciais" },
+  { label: "Contato", href: "#contato" },
 ];
 
 export default function Footer() {
@@ -36,7 +35,7 @@ export default function Footer() {
             />
             <p className="mt-5 text-sm leading-7 text-white/75">
               {
-                "Atendimento jurídico com foco em estratégia, clareza e relacionamento próximo, sempre com atenção aos detalhes e compromisso com resultado."
+                "Advocacia moderna, estratégica e altamente técnica, com atendimento personalizado e atuação em todo o Brasil."
               }
             </p>
 
@@ -75,7 +74,7 @@ export default function Footer() {
                 <div>
                   <p className="text-sm font-medium text-white">Telefone</p>
                   <p className="mt-1 text-sm text-white/72">
-                    +55 (11) 99999-9999
+                    (16) 99111-0752
                   </p>
                 </div>
               </div>
@@ -85,9 +84,9 @@ export default function Footer() {
                   <FaWhatsapp />
                 </span>
                 <div>
-                  <p className="text-sm font-medium text-white">WhatsApp</p>
+                  <p className="text-sm font-medium text-white">Atendimento</p>
                   <p className="mt-1 text-sm text-white/72">
-                    +55 (11) 99999-9999
+                    (14) 99885-0361
                   </p>
                 </div>
               </div>
@@ -99,7 +98,7 @@ export default function Footer() {
                 <div>
                   <p className="text-sm font-medium text-white">Email</p>
                   <p className="mt-1 text-sm text-white/72">
-                    contato@escritorio.com
+                    fernando.adv.souza@gmail.com
                   </p>
                 </div>
               </div>
@@ -112,19 +111,17 @@ export default function Footer() {
             </h3>
             <ul className="mt-5 space-y-3">
               {quickLinks.map((item) => (
-                <li key={item}>
+                <li key={item.label}>
                   <a
                     className="text-sm text-white/72 transition duration-300 hover:translate-x-1 hover:text-white"
-                    href="#"
+                    href={item.href}
                   >
-                    {item}
+                    {item.label}
                   </a>
                 </li>
               ))}
             </ul>
           </div>
-
-
         </div>
 
         <div className="flex flex-col gap-3 pt-6 text-center text-sm text-white/65 lg:flex-row lg:items-center lg:justify-between lg:text-left">

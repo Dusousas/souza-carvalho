@@ -1,82 +1,173 @@
 "use client";
 
+import { useEffect, useMemo, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { FaArrowLeft, FaQuoteRight, FaStar } from "react-icons/fa";
 
-export default function Testimonials() {
-  return (
-    <>
-      <section className="bgTesti py-20">
-        <div className="maxW">
-          <div className="flex items-center justify-between">
-            <div>
-              <h3 className="text-[#B68C5A] font-display tracking-[0.34em] font-bold uppercase md:text-base">
-                Depoimentos
-              </h3>
-              <h1 className="text-5xl text-AzulP font-medium">
-                O que dizem sobre nós
-              </h1>
-            </div>
+const testimonials = [
+  {
+    name: "Atendimento personalizado",
+    role: "Diferencial do escritório",
+    text: "Cada demanda é conduzida com proximidade, clareza e responsabilidade, porque acreditamos que cada caso exige uma estratégia própria.",
+  },
+  {
+    name: "Ética e transparência",
+    role: "Base da atuação",
+    text: "Nossa atuação é pautada pela ética, pela transparência e pelo compromisso de oferecer orientação segura em cada etapa do atendimento.",
+  },
+  {
+    name: "Atuação em todo o Brasil",
+    role: "Presença nacional",
+    text: "Prestamos atendimento jurídico em âmbito nacional, com soluções eficientes tanto para pessoas físicas quanto para empresas.",
+  },
+  {
+    name: "Comprometimento com resultados",
+    role: "Excelência técnica",
+    text: "Buscamos soluções jurídicas preventivas e contenciosas com atuação firme, técnica e alinhada às necessidades reais de cada cliente.",
+  },
+];
 
-            <div className="flex gap-4 justify-center items-center">
-              <div className="bg-[#B68C5A] h-10 w-10 flex items-center justify-center rounded-full cursor-pointer">
-                <FaArrowLeft />
-              </div>
-              <div className="bg-[#B68C5A] rotate-180 h-10 w-10 flex items-center justify-center rounded-full cursor-pointer">
-                <FaArrowLeft />
-              </div>
-            </div>
+export default function Testimonials() {
+  const [cardsPerView, setCardsPerView] = useState(2);
+  const [currentPage, setCurrentPage] = useState(0);
+  const [direction, setDirection] = useState(1);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 1023px)");
+
+    const updateCardsPerView = () => {
+      setCardsPerView(mediaQuery.matches ? 1 : 2);
+    };
+
+    updateCardsPerView();
+    mediaQuery.addEventListener("change", updateCardsPerView);
+
+    return () => {
+      mediaQuery.removeEventListener("change", updateCardsPerView);
+    };
+  }, []);
+
+  const pages = useMemo(() => {
+    const result = [];
+
+    for (let i = 0; i < testimonials.length; i += cardsPerView) {
+      result.push(testimonials.slice(i, i + cardsPerView));
+    }
+
+    return result;
+  }, [cardsPerView]);
+
+  useEffect(() => {
+    setCurrentPage((page) => Math.min(page, Math.max(pages.length - 1, 0)));
+  }, [pages.length]);
+
+  const goToPrevious = () => {
+    setDirection(-1);
+    setCurrentPage((page) => (page === 0 ? pages.length - 1 : page - 1));
+  };
+
+  const goToNext = () => {
+    setDirection(1);
+    setCurrentPage((page) => (page === pages.length - 1 ? 0 : page + 1));
+  };
+
+  return (
+    <section
+      id="diferenciais"
+      className="bgTesti py-16 scroll-mt-28 md:py-20"
+    >
+      <div className="maxW">
+        <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+          <div className="max-w-2xl">
+            <h3 className="font-display text-sm font-bold uppercase tracking-[0.34em] text-[#B68C5A] md:text-base">
+              Diferenciais
+            </h3>
+            <h1 className="mt-3 text-3xl font-medium text-AzulP sm:text-4xl lg:text-5xl">
+              O que orienta nossa atuação
+            </h1>
           </div>
 
-          {/* DEPOIMENTOS WRAPER */}
-          <article className="mt-10 flex gap-8">
-            <div className="group relative bg-white py-10 shadow-lg border-b-6 border-Douradop rounded-xl px-10 flex overflow-hidden transition duration-400 hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(28,53,93,0.10)]">
-              <div className="absolute right-0 top-0 flex h-22 w-22 items-center justify-center rounded-bl-[28px] bg-[#F5F5F5] text-AzulP transition duration-500 group-hover:bg-AzulP group-hover:text-white">
-                <FaQuoteRight className="text-[34px]" />
-              </div>
-              <div>
-                <h3 className="text-AzulP text-2xl font-semibold">
-                  Eduardo Sousa
-                </h3>
-                <p className="text-[#868686] text-[12px] uppercase">
-                  CEO - Agência Youon
-                </p>
-                <FaStar className="text-yellow-500 mt-2" />
-
-                <p className="text-[#868686] mt-4">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. A
-                  earum maiores vero odit veniam labore recusandae magni
-                  quibusdam, repellat cumque at accusamus necessitatibus
-                  delectus aspernatur cupiditate quod, accusantium ullam
-                  eligendi?
-                </p>
-              </div>
-            </div>
-
-                        <div className="group relative bg-white py-10 shadow-lg border-b-6 border-Douradop rounded-2xl px-10 flex overflow-hidden transition duration-400 hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(28,53,93,0.10)]">
-              <div className="absolute right-0 top-0 flex h-22 w-22 items-center justify-center rounded-bl-[28px] bg-[#F5F5F5] text-AzulP transition duration-500 group-hover:bg-AzulP group-hover:text-white">
-                <FaQuoteRight className="text-[34px]" />
-              </div>
-              <div>
-                <h3 className="text-AzulP text-2xl font-semibold">
-                  Eduardo Sousa
-                </h3>
-                <p className="text-[#868686] text-[12px] uppercase">
-                  CEO - Agência Youon
-                </p>
-                <FaStar className="text-yellow-500 mt-2" />
-
-                <p className="text-[#868686] mt-4">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. A
-                  earum maiores vero odit veniam labore recusandae magni
-                  quibusdam, repellat cumque at accusamus necessitatibus
-                  delectus aspernatur cupiditate quod, accusantium ullam
-                  eligendi?
-                </p>
-              </div>
-            </div>
-          </article>
+          <div className="flex items-center justify-center gap-3 lg:justify-start">
+            <button
+              type="button"
+              aria-label="Depoimento anterior"
+              onClick={goToPrevious}
+              className="flex h-11 w-11 items-center justify-center rounded-full bg-[#B68C5A] text-AzulP transition hover:-translate-y-0.5 hover:bg-[#c79a61]"
+            >
+              <FaArrowLeft />
+            </button>
+            <button
+              type="button"
+              aria-label="Próximo depoimento"
+              onClick={goToNext}
+              className="flex h-11 w-11 items-center justify-center rounded-full bg-[#B68C5A] text-AzulP transition hover:-translate-y-0.5 hover:bg-[#c79a61]"
+            >
+              <FaArrowLeft className="rotate-180" />
+            </button>
+          </div>
         </div>
-      </section>
-    </>
+
+        <div className="mt-10 overflow-hidden">
+          <AnimatePresence mode="wait" custom={direction}>
+            <motion.article
+              key={`${cardsPerView}-${currentPage}`}
+              custom={direction}
+              initial={{ opacity: 0, x: direction > 0 ? 70 : -70 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: direction > 0 ? -70 : 70 }}
+              transition={{ duration: 0.35, ease: "easeOut" }}
+              className="grid gap-5 lg:grid-cols-2 lg:gap-8"
+            >
+              {pages[currentPage]?.map((testimonial) => (
+                <div
+                  key={testimonial.name}
+                  className="group relative flex min-h-[320px] overflow-hidden rounded-[24px] border-b-[6px] border-Douradop bg-white px-6 py-8 shadow-lg transition duration-300 hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(28,53,93,0.10)] sm:px-8 lg:min-h-[340px] lg:px-10"
+                >
+                  <div className="absolute right-0 top-0 flex h-20 w-20 items-center justify-center rounded-bl-[28px] bg-[#F5F5F5] text-AzulP transition duration-500 group-hover:bg-AzulP group-hover:text-white">
+                    <FaQuoteRight className="text-[30px]" />
+                  </div>
+
+                  <div className="pr-8">
+                    <h3 className="text-2xl font-semibold text-AzulP">
+                      {testimonial.name}
+                    </h3>
+                    <p className="text-[11px] uppercase tracking-[0.18em] text-[#868686] sm:text-[12px]">
+                      {testimonial.role}
+                    </p>
+
+                    <div className="mt-3 flex gap-1 text-yellow-500">
+                      {Array.from({ length: 5 }).map((_, index) => (
+                        <FaStar key={index} />
+                      ))}
+                    </div>
+
+                    <p className="mt-5 text-[15px] leading-7 text-[#6f7480]">
+                      {testimonial.text}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </motion.article>
+          </AnimatePresence>
+        </div>
+
+        <div className="mt-6 flex items-center justify-center gap-2">
+          {pages.map((_, index) => (
+            <button
+              key={index}
+              type="button"
+              aria-label={`Ir para o slide ${index + 1}`}
+              onClick={() => {
+                setDirection(index > currentPage ? 1 : -1);
+                setCurrentPage(index);
+              }}
+              className={`h-2.5 rounded-full transition-all ${
+                index === currentPage ? "w-8 bg-AzulP" : "w-2.5 bg-AzulP/25 hover:bg-AzulP/45"
+              }`}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }

@@ -8,16 +8,16 @@ export default function Navbar() {
       <nav>
         <ul className="flex gap-8 uppercase text-AzulP tracking-wide text-lg">
           <li>
-            <a href="">Início</a>
+            <a href="#inicio">Início</a>
           </li>
           <li>
-            <a href="">Sobe nós</a>
+            <a href="#escritorio">O escritório</a>
           </li>
           <li>
-            <a href="">Serviços</a>
+            <a href="#atuacao">Atuação</a>
           </li>
           <li>
-            <a href="">Contato</a>
+            <a href="#contato">Contato</a>
           </li>
         </ul>
       </nav>

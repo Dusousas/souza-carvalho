@@ -3,52 +3,55 @@
 const serviceCards = [
   {
     icon: "/icons/service_card_1_1.svg",
-    title: "Criminal",
+    title: "Direito Penal",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor at quo laudantium nobis possimus nostrum sequi facere earum aliquid odit!",
+      "Atuação na defesa em investigações e processos criminais, da fase policial às instâncias superiores, com proteção dos direitos fundamentais.",
   },
   {
     icon: "/icons/service_card_1_2.svg",
-    title: "Consultoria",
+    title: "Direito Civil",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor at quo laudantium nobis possimus nostrum sequi facere earum aliquid odit!",
+      "Atuação em responsabilidade civil, contratos, indenizações, inventário, pensão alimentícia, guarda e conflitos entre particulares.",
   },
   {
     icon: "/icons/service_card_1_3.svg",
-    title: "Contratos",
+    title: "Direito do Consumidor",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor at quo laudantium nobis possimus nostrum sequi facere earum aliquid odit!",
+      "Defesa dos direitos do consumidor em cobranças indevidas, falhas na prestação de serviços, negativação indevida e relações de consumo em geral.",
   },
   {
     icon: "/icons/service_card_1_4.svg",
-    title: "Fam\u00edlia",
+    title: "Direito Empresarial",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor at quo laudantium nobis possimus nostrum sequi facere earum aliquid odit!",
+      "Assessoria jurídica para empresas, com foco preventivo e estratégico, elaboração e revisão de contratos e mitigação de riscos legais.",
   },
   {
     icon: "/icons/service_card_1_5.svg",
-    title: "Empresarial",
+    title: "Direito do Trabalho",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor at quo laudantium nobis possimus nostrum sequi facere earum aliquid odit!",
+      "Atuação tanto na defesa de empresas quanto de trabalhadores, em ações trabalhistas e consultoria preventiva.",
   },
   {
     icon: "/icons/service_card_1_6.svg",
-    title: "Previdenci\u00e1rio",
+    title: "Direito Bancário",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor at quo laudantium nobis possimus nostrum sequi facere earum aliquid odit!",
+      "Atuação em revisões contratuais, análise de juros abusivos, fraudes bancárias e defesa em execuções e cobranças indevidas.",
   },
 ];
 
 export default function Services() {
   return (
-    <section className="bg-white pt-40 pb-20">
+    <section
+      id="atuacao"
+      className="bg-white pt-20 pb-20 scroll-mt-28 lg:pt-40"
+    >
       <div className="maxW">
         <h3 className="text-[#B68C5A] font-display text-center tracking-[0.34em] uppercase md:text-base">
-          Nossos serviços
+          Áreas de atuação
         </h3>
 
-        <h1 className="text-5xl mt-2 text-AzulP text-center font-medium">
-          Lorem ipsum dolor sit.
+        <h1 className="text-3xl mt-2 text-AzulP text-center font-medium lg:text-5xl">
+          Defesa técnica, preventiva e combativa para proteger seus direitos.
         </h1>
 
         <article className="mt-20 grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">

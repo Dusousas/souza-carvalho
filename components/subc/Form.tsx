@@ -20,9 +20,9 @@ function FieldIcon({ children }: { children: ReactNode }) {
 export default function Form() {
   return (
     <form className="rounded-[24px] bg-AzulP p-2" action="">
-      <p className="text-center text-white/82">Lorem, ipsum dolor.</p>
+      <p className="text-center text-white/82">Atendimento personalizado</p>
       <h2 className="mt-2 text-center text-3xl text-white lg:text-[3rem]">
-        Lorem, ipsum dolor?
+        Fale com a nossa equipe
       </h2>
 
       <div className="relative mt-8">
@@ -69,7 +69,7 @@ export default function Form() {
       <div className="relative mt-6">
         <textarea
           className="w-full resize-none rounded-[28px] bg-white px-5 py-5 pr-14 text-black outline-0 placeholder:text-[#7B808B]"
-          placeholder="Sua mensagem"
+          placeholder="Descreva sua demanda"
           name=""
           rows={7}
           id=""
@@ -80,7 +80,7 @@ export default function Form() {
       </div>
 
       <button className="hero-cta mt-6 flex w-full cursor-pointer items-center justify-center gap-3 rounded-full bg-[#B88B5A] px-4 py-4 text-white shadow-[0_14px_28px_rgba(184,139,90,0.22)] transition duration-300 hover:-translate-y-1 hover:bg-[#c69964]">
-        <span>Enviar</span>
+        <span>Enviar mensagem</span>
         <FaPaperPlane className="text-sm" />
       </button>
     </form>

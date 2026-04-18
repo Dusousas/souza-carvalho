@@ -1,35 +1,37 @@
 "use client";
 
 import {
-  FaEnvelope,
   FaFacebookF,
   FaInstagram,
   FaLinkedinIn,
+  FaPhone,
   FaRegClock,
-  FaWhatsapp,
 } from "react-icons/fa6";
 import Form from "./subc/Form";
 
 const contactItems = [
   {
-    icon: <FaEnvelope />,
-    label: "Email",
-    primary: "contato@escritorio.com",
-    secondary: "Resposta rápida e atendimento direto",
+    icon: <FaPhone />,
+    label: "Fernando Souza Junior",
+    primary: "(16) 99111-0752",
+    secondary: "fernando.adv.souza@gmail.com",
   },
   {
-    icon: <FaWhatsapp />,
-    label: "WhatsApp",
-    primary: "+55 (11) 99999-9999",
-    secondary: "Canal prático para primeiros contatos",
+    icon: <FaPhone />,
+    label: "Guilherme Carvalho",
+    primary: "(14) 99885-0361",
+    secondary: "guilhermebcarvalho@adv.oabsp.org.br",
   },
 ];
 
 export default function Contact() {
   return (
-    <section className="bg-white py-20 lg:py-24">
+    <section
+      id="contato"
+      className="bg-white py-20 scroll-mt-28 lg:py-24"
+    >
       <div className="maxW">
-        <article className="relative mx-auto  overflow-hidden rounded-[30px] bg-[#F5F5F5] p-5">
+        <article className="relative mx-auto overflow-hidden rounded-[30px] bg-[#F5F5F5] p-5">
           <div className="relative z-10 grid gap-5 lg:grid-cols-2">
             <div className="rounded-[28px] bg-AzulP p-3 md:p-4">
               <Form />
@@ -39,16 +41,16 @@ export default function Contact() {
               <div className="mx-auto flex w-full px-6 flex-col justify-center gap-4">
                 <div className="text-center lg:text-left">
                   <h3 className="text-[#B68C5A] font-display text-sm tracking-[0.30em] uppercase">
-                    {"Contato"}
+                    {"Entre em contato"}
                   </h3>
 
                   <h2 className="mt-2 text-2xl font-medium leading-[0.98] text-AzulP">
-                    {"Fale com nossa equipe de forma simples e direta."}
+                    {"Souza Junior & Carvalho Sociedade de Advogados"}
                   </h2>
 
                   <p className="mt-3 text-sm text-[#6F7480] lg:text-[15px]">
                     {
-                      "Não atendemos em local físico. Nosso contato acontece por canais digitais, com orientação inicial, retorno ágil e encaminhamento personalizado para cada necessidade."
+                      "Atuamos de forma 100% digital, atendendo clientes em todo o Brasil com agilidade, eficiência e segurança, sem abrir mão da proximidade e do suporte individualizado."
                     }
                   </p>
                 </div>
@@ -86,46 +88,45 @@ export default function Contact() {
                       </span>
                       <div>
                         <p className="font-display text-lg text-AzulP">
-                          {"Atendimento digital"}
+                          {"Escritório digital"}
                         </p>
                         <p className="text-xs leading-5 text-[#6F7480]">
-                          {"Segunda a sexta, das 8h às 18h"}
+                          {"Atendimento em todo o Brasil"}
                         </p>
                       </div>
                     </div>
 
                     <p className="text-xs leading-6 text-[#6F7480]">
                       {
-                        "Se preferir, envie sua mensagem pelo formulário e retornamos pelo melhor canal para você."
+                        "Utilizamos tecnologia para facilitar reuniões online, envio de documentos digitais e acompanhamento processual à distância."
                       }
                     </p>
                   </div>
-
                 </div>
-                
-                  <div className="flex flex-wrap justify-center gap-2">
-                    <a
-                      className="flex h-11 w-11 items-center justify-center rounded-full bg-AzulP text-white transition duration-500 hover:-translate-y-1 hover:rotate-[360deg] hover:bg-[#B68C5A]"
-                      href="#"
-                      aria-label="Instagram"
-                    >
-                      <FaInstagram />
-                    </a>
-                    <a
-                      className="flex h-11 w-11 items-center justify-center rounded-full bg-AzulP text-white transition duration-500 hover:-translate-y-1 hover:rotate-[360deg] hover:bg-[#B68C5A]"
-                      href="#"
-                      aria-label="Facebook"
-                    >
-                      <FaFacebookF />
-                    </a>
-                    <a
-                      className="flex h-11 w-11 items-center justify-center rounded-full bg-AzulP text-white transition duration-500 hover:-translate-y-1 hover:rotate-[360deg] hover:bg-[#B68C5A]"
-                      href="#"
-                      aria-label="LinkedIn"
-                    >
-                      <FaLinkedinIn />
-                    </a>
-                  </div>
+
+                <div className="flex flex-wrap justify-center gap-2">
+                  <a
+                    className="flex h-11 w-11 items-center justify-center rounded-full bg-AzulP text-white transition duration-500 hover:-translate-y-1 hover:rotate-[360deg] hover:bg-[#B68C5A]"
+                    href="#"
+                    aria-label="Instagram"
+                  >
+                    <FaInstagram />
+                  </a>
+                  <a
+                    className="flex h-11 w-11 items-center justify-center rounded-full bg-AzulP text-white transition duration-500 hover:-translate-y-1 hover:rotate-[360deg] hover:bg-[#B68C5A]"
+                    href="#"
+                    aria-label="Facebook"
+                  >
+                    <FaFacebookF />
+                  </a>
+                  <a
+                    className="flex h-11 w-11 items-center justify-center rounded-full bg-AzulP text-white transition duration-500 hover:-translate-y-1 hover:rotate-[360deg] hover:bg-[#B68C5A]"
+                    href="#"
+                    aria-label="LinkedIn"
+                  >
+                    <FaLinkedinIn />
+                  </a>
+                </div>
               </div>
             </div>
           </div>
