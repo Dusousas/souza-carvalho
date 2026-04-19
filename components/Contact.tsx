@@ -31,20 +31,20 @@ export default function Contact() {
       className="bg-white py-20 scroll-mt-28 lg:py-24"
     >
       <div className="maxW">
-        <article className="relative mx-auto overflow-hidden rounded-[30px] bg-[#F5F5F5] p-5">
+        <article className="relative mx-auto overflow-hidden rounded-[30px] bg-[#F5F5F5] p-3 sm:p-5">
           <div className="relative z-10 grid gap-5 lg:grid-cols-2">
-            <div className="rounded-[28px] bg-AzulP p-3 md:p-4">
+            <div className="min-w-0 rounded-[28px] bg-AzulP p-3 md:p-4">
               <Form />
             </div>
 
-            <div className="flex h-full items-center rounded-[28px] border border-[#1C355D]/8 bg-white ">
-              <div className="mx-auto flex w-full px-6 flex-col justify-center gap-4">
+            <div className="min-w-0 flex h-full items-center py-4 rounded-[28px] border border-[#1C355D]/8 bg-white lg:py-0">
+              <div className="mx-auto flex min-w-0 w-full flex-col justify-center gap-4 px-5 sm:px-6">
                 <div className="text-center lg:text-left">
                   <h3 className="text-[#B68C5A] font-display text-sm tracking-[0.30em] uppercase">
                     {"Entre em contato"}
                   </h3>
 
-                  <h2 className="mt-2 text-2xl font-medium leading-[0.98] text-AzulP">
+                  <h2 className="mt-2 break-words text-2xl font-medium leading-[1.05] text-AzulP">
                     {"Souza Junior & Carvalho Sociedade de Advogados"}
                   </h2>
 
@@ -59,20 +59,20 @@ export default function Contact() {
                   {contactItems.map((item) => (
                     <div
                       key={item.label}
-                      className="flex items-center gap-3 rounded-[20px] border border-[#1C355D]/8 bg-[#F7F7F7] px-3.5 py-2 transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_16px_28px_rgba(28,53,93,0.06)]"
+                      className="flex items-start gap-3 rounded-[20px] border border-[#1C355D]/8 bg-[#F7F7F7] px-3.5 py-2 transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_16px_28px_rgba(28,53,93,0.06)] sm:items-center"
                     >
                       <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-AzulP text-lg text-white shadow-[0_10px_22px_rgba(28,53,93,0.16)]">
                         {item.icon}
                       </div>
 
-                      <div>
+                      <div className="min-w-0">
                         <p className="font-display font-medium leading-none text-[#B68C5A]">
                           {item.label}
                         </p>
-                        <p className="mt-1 text-sm font-medium leading-6 text-AzulP">
+                        <p className="mt-1 break-words text-sm font-medium leading-6 text-AzulP">
                           {item.primary}
                         </p>
-                        <p className="mt-0.5 text-xs leading-5 text-[#7B808B]">
+                        <p className="mt-0.5 break-all text-xs leading-5 text-[#7B808B]">
                           {item.secondary}
                         </p>
                       </div>

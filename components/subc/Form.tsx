@@ -19,9 +19,9 @@ function FieldIcon({ children }: { children: ReactNode }) {
 
 export default function Form() {
   return (
-    <form className="rounded-[24px] bg-AzulP p-2" action="">
+    <form className="min-w-0 rounded-[24px] bg-AzulP p-2" action="">
       <p className="text-center text-white/82">Atendimento personalizado</p>
-      <h2 className="mt-2 text-center text-3xl text-white lg:text-[3rem]">
+      <h2 className="mt-2 text-center text-[2rem] leading-tight text-white sm:text-3xl lg:text-[3rem]">
         Fale com a nossa equipe
       </h2>
 
