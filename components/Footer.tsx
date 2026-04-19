@@ -28,11 +28,13 @@ export default function Footer() {
       <div className="relative z-10 maxW py-16">
         <div className="grid gap-10 border-b border-white/10 pb-10 lg:grid-cols-[1.2fr_0.9fr_0.8fr_0.9fr]">
           <div className="max-w-[360px]">
-            <img
-              className="w-full max-w-[180px]"
-              src="/logo.png"
-              alt="Logo Souza & Carvalho"
-            />
+            <a href="/" rel="noopener noreferrer">
+              <img
+                className="w-full max-w-[180px]"
+                src="/logo.png"
+                alt="Logo Souza & Carvalho"
+              />
+            </a>
             <p className="mt-5 text-sm leading-7 text-white/75">
               {
                 "Advocacia moderna, estratégica e altamente técnica, com atendimento personalizado e atuação em todo o Brasil."
@@ -124,13 +126,13 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-col gap-3 pt-6 text-center text-sm text-white/65 lg:flex-row lg:items-center lg:justify-between lg:text-left">
+        <div className="flex flex-col gap-3 pb-4 pt-6 text-center text-sm text-white/65 lg:flex-row lg:items-center lg:justify-between lg:text-left">
           <p>© 2026 Souza & Carvalho. Todos os direitos reservados.</p>
           <p>
-            desenvolvido por{" "}
-            <span className="font-semibold uppercase tracking-[0.18em] text-[#EDCF81]">
-              you-on
-            </span>
+            Desenvolvido por{" "}
+            <a href="https://agenciayouon.com/" target="_blank" className="font-semibold uppercase text-white underline">
+              You on
+            </a>
           </p>
         </div>
       </div>
