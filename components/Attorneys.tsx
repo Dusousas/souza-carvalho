@@ -41,12 +41,12 @@ export default function Attorneys() {
 
       <div className="maxW relative z-10 flex flex-col gap-12 lg:flex-row lg:items-center lg:gap-20">
         <article className="lg:w-[30%]">
-          <p className="text-Douradop text-sm uppercase tracking-[0.3em] text-center lg:text-left">
+          <p className="text-Douradop text-md uppercase tracking-[0.3em] text-center lg:text-left">
             Sobre nós
           </p>
 
-          <h1 className="mt-3 text-4xl font-semibold uppercase text-white md:text-5xl text-center lg:text-left">
-            Advogados
+          <h1 className="mt-3 text-4xl font-semibold uppercase tracking-wider text-white md:text-6xl text-center lg:text-left">
+            Advogado
           </h1>
         </article>
 
@@ -60,7 +60,7 @@ export default function Attorneys() {
                 <img
                   src={attorney.image}
                   alt={attorney.name}
-                  className="h-full w-full object-cover transition-all duration-500 group-hover:scale-110 group-hover:blur-[2px]"
+                  className="h-full w-full object-cover object-top transition-all duration-500 group-hover:scale-110 group-hover:blur-[2px]"
                 />
 
                 <div className="absolute inset-0 flex items-center justify-center bg-[#1C355D]/55 opacity-0 backdrop-blur-sm transition-all duration-500 group-hover:opacity-100">
@@ -69,19 +69,16 @@ export default function Attorneys() {
                       {attorney.name}
                     </h3>
 
-                    <p className="mt-1 text-[14px] font-medium uppercase text-white/85">
+                    <p className="mt-3 text-[14px] font-medium uppercase text-white/85">
                       {attorney.role}
                     </p>
                   </div>
                 </div>
               </div>
 
-              <div className="absolute bottom-0 left-0 h-[90px] w-full rounded-b-[22px] border-b-[2px] border-Douradop bg-AzulP px-4 py-5 text-center transition-opacity duration-300 group-hover:opacity-0">
-                <p className="text-[15px] font-semibold text-white">
+              <div className="absolute bottom-0 left-0 flex h-[90px] w-full items-center justify-center rounded-b-[22px] border-b-[2px] border-Douradop bg-AzulP px-4 text-center transition-opacity duration-300 group-hover:opacity-0">
+                <p className="text-[12px] font-semibold text-white">
                   {attorney.name}
-                </p>
-                <p className="text-[13px] font-medium uppercase text-white">
-                  {attorney.role}
                 </p>
               </div>
             </div>

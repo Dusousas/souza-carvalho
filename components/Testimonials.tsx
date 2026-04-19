@@ -6,24 +6,24 @@ import { FaArrowLeft, FaQuoteRight, FaStar } from "react-icons/fa";
 
 const testimonials = [
   {
-    name: "Atendimento personalizado",
-    role: "Diferencial do escritório",
-    text: "Cada demanda é conduzida com proximidade, clareza e responsabilidade, porque acreditamos que cada caso exige uma estratégia própria.",
+    name: "Mariana Oliveira",
+    role: "Cliente - Direito de Família",
+    text: "Fui atendida com muita atenção e clareza em um momento delicado. O escritório conduziu tudo com profissionalismo e me deixou segura durante todo o processo.",
   },
   {
-    name: "Ética e transparência",
-    role: "Base da atuação",
-    text: "Nossa atuação é pautada pela ética, pela transparência e pelo compromisso de oferecer orientação segura em cada etapa do atendimento.",
+    name: "Carlos Henrique Santos",
+    role: "Cliente - Área Empresarial",
+    text: "Recebi uma orientação jurídica objetiva, estratégica e muito bem fundamentada. O suporte foi ágil e fez diferença na tomada de decisão da minha empresa.",
   },
   {
-    name: "Atuação em todo o Brasil",
-    role: "Presença nacional",
-    text: "Prestamos atendimento jurídico em âmbito nacional, com soluções eficientes tanto para pessoas físicas quanto para empresas.",
+    name: "Patrícia Almeida",
+    role: "Cliente - Direito do Consumidor",
+    text: "Desde o primeiro contato percebi o comprometimento da equipe. Tive total transparência sobre cada etapa e um atendimento realmente humanizado.",
   },
   {
-    name: "Comprometimento com resultados",
-    role: "Excelência técnica",
-    text: "Buscamos soluções jurídicas preventivas e contenciosas com atuação firme, técnica e alinhada às necessidades reais de cada cliente.",
+    name: "Roberto Ferreira",
+    role: "Cliente - Consultoria Jurídica",
+    text: "O escritório uniu conhecimento técnico, seriedade e disponibilidade. Recomendo pelo cuidado no atendimento e pela confiança transmitida em cada orientação.",
   },
 ];
 
@@ -80,10 +80,10 @@ export default function Testimonials() {
         <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-2xl">
             <h3 className="font-display text-sm font-bold uppercase tracking-[0.34em] text-[#B68C5A] md:text-base">
-              Diferenciais
+              Depoimentos
             </h3>
             <h1 className="mt-3 text-3xl font-medium text-AzulP sm:text-4xl lg:text-5xl">
-              O que orienta nossa atuação
+              Depoimentos de clientes
             </h1>
           </div>
 
@@ -92,7 +92,7 @@ export default function Testimonials() {
               type="button"
               aria-label="Depoimento anterior"
               onClick={goToPrevious}
-              className="flex h-11 w-11 items-center justify-center rounded-full bg-[#B68C5A] text-AzulP transition hover:-translate-y-0.5 hover:bg-[#c79a61]"
+              className="flex h-11 w-11 items-center cursor-pointer justify-center rounded-full bg-[#B68C5A] text-AzulP transition hover:-translate-y-0.5 hover:bg-[#c79a61]"
             >
               <FaArrowLeft />
             </button>
@@ -100,7 +100,7 @@ export default function Testimonials() {
               type="button"
               aria-label="Próximo depoimento"
               onClick={goToNext}
-              className="flex h-11 w-11 items-center justify-center rounded-full bg-[#B68C5A] text-AzulP transition hover:-translate-y-0.5 hover:bg-[#c79a61]"
+              className="flex h-11 w-11 items-center justify-center cursor-pointer rounded-full bg-[#B68C5A] text-AzulP transition hover:-translate-y-0.5 hover:bg-[#c79a61]"
             >
               <FaArrowLeft className="rotate-180" />
             </button>

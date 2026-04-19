@@ -114,10 +114,10 @@ export default function About() {
                 alt=""
               />
               <div>
-                <p className="text-white uppercase text-4xl leading-none">
+                <p className="text-white uppercase text-2xl leading-none font-semibold">
                   2024
                 </p>
-                <p className="text-white text-xl mt-1">Fundação do escritório</p>
+                <p className="text-white text-lg mt-1">Fundação do escritório</p>
               </div>
             </div>
 
@@ -128,10 +128,10 @@ export default function About() {
                 alt=""
               />
               <div>
-                <p className="text-white uppercase text-4xl leading-none">
+                <p className="text-white uppercase text-2xl leading-none  font-semibold">
                   Brasil
                 </p>
-                <p className="text-white text-xl mt-1">Atuação nacional</p>
+                <p className="text-white text-lg mt-1">Atuação nacional</p>
               </div>
             </div>
 
@@ -142,10 +142,10 @@ export default function About() {
                 alt=""
               />
               <div>
-                <p className="text-white text-4xl uppercase leading-none">
+                <p className="text-white text-2xl uppercase leading-none font-semibold">
                   Preventiva
                 </p>
-                <p className="text-white text-xl mt-1">Consultoria estratégica</p>
+                <p className="text-white text-lg mt-1">Consultoria estratégica</p>
               </div>
             </div>
 
@@ -156,10 +156,10 @@ export default function About() {
                 alt=""
               />
               <div>
-                <p className="text-white uppercase text-4xl leading-none">
+                <p className="text-white uppercase text-2xl leading-none font-semibold">
                   Contenciosa
                 </p>
-                <p className="text-white text-xl mt-1">Defesa técnica e firme</p>
+                <p className="text-white text-lg mt-1">Defesa técnica e firme</p>
               </div>
             </div>
           </div>
