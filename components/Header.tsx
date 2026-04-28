@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { BiLogoInstagramAlt } from "react-icons/bi";
 import { FaBars, FaPhone, FaTimes } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
@@ -35,13 +36,13 @@ export default function Header() {
         className={`lg:hidden ${mobileMenuOpen ? "fixed inset-0 z-50 bg-AzulP" : "relative z-50"}`}
       >
         <div className="flex items-center gap-3 bg-AzulP px-4 py-3 text-white">
-          <a href="/" className="flex min-w-0 flex-1 items-center">
+          <Link href="/" className="flex min-w-0 flex-1 items-center">
             <img
               className="block h-12 w-auto max-w-[170px] object-contain object-left"
               src="/logo.png"
               alt="Logo Souza & Carvalho"
             />
-          </a>
+          </Link>
 
           <button
             type="button"
@@ -130,13 +131,13 @@ export default function Header() {
 
       <div className="hidden w-full lg:flex">
         <article className="flex w-[300px] shrink-0 items-center justify-center bg-AzulP px-6 py-6">
-          <a href="/">
+          <Link href="/">
             <img
               className="w-full max-w-[180px]"
               src="/logo.png"
               alt="Logo Souza & Carvalho"
             />
-          </a>
+          </Link>
         </article>
 
         <article className="flex flex-1 flex-col">

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import {
   FaEnvelope,
   FaFacebookF,
@@ -28,13 +29,13 @@ export default function Footer() {
       <div className="relative z-10 maxW py-16">
         <div className="grid gap-10 border-b border-white/10 pb-10 lg:grid-cols-[1.2fr_0.9fr_0.8fr_0.9fr]">
           <div className="max-w-[360px]">
-            <a href="/" rel="noopener noreferrer">
+            <Link href="/">
               <img
                 className="w-full max-w-[180px]"
                 src="/logo.png"
                 alt="Logo Souza & Carvalho"
               />
-            </a>
+            </Link>
             <p className="mt-5 text-sm leading-7 text-white/75">
               {
                 "Advocacia moderna, estratégica e altamente técnica, com atendimento personalizado e atuação em todo o Brasil."

@@ -57,18 +57,22 @@ export default function Testimonials() {
     return result;
   }, [cardsPerView]);
 
-  useEffect(() => {
-    setCurrentPage((page) => Math.min(page, Math.max(pages.length - 1, 0)));
-  }, [pages.length]);
+  const safeCurrentPage = Math.min(currentPage, Math.max(pages.length - 1, 0));
 
   const goToPrevious = () => {
     setDirection(-1);
-    setCurrentPage((page) => (page === 0 ? pages.length - 1 : page - 1));
+    setCurrentPage((page) => {
+      const safePage = Math.min(page, Math.max(pages.length - 1, 0));
+      return safePage === 0 ? pages.length - 1 : safePage - 1;
+    });
   };
 
   const goToNext = () => {
     setDirection(1);
-    setCurrentPage((page) => (page === pages.length - 1 ? 0 : page + 1));
+    setCurrentPage((page) => {
+      const safePage = Math.min(page, Math.max(pages.length - 1, 0));
+      return safePage === pages.length - 1 ? 0 : safePage + 1;
+    });
   };
 
   return (
@@ -110,7 +114,7 @@ export default function Testimonials() {
         <div className="mt-10 overflow-hidden">
           <AnimatePresence mode="wait" custom={direction}>
             <motion.article
-              key={`${cardsPerView}-${currentPage}`}
+              key={`${cardsPerView}-${safeCurrentPage}`}
               custom={direction}
               initial={{ opacity: 0, x: direction > 0 ? 70 : -70 }}
               animate={{ opacity: 1, x: 0 }}
@@ -118,7 +122,7 @@ export default function Testimonials() {
               transition={{ duration: 0.35, ease: "easeOut" }}
               className="grid gap-5 lg:grid-cols-2 lg:gap-8"
             >
-              {pages[currentPage]?.map((testimonial) => (
+              {pages[safeCurrentPage]?.map((testimonial) => (
                 <div
                   key={testimonial.name}
                   className="group relative flex min-h-[320px] overflow-hidden rounded-[24px] border-b-[6px] border-Douradop bg-white px-6 py-8 shadow-lg transition duration-300 hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(28,53,93,0.10)] sm:px-8 lg:min-h-[340px] lg:px-10"
@@ -158,11 +162,11 @@ export default function Testimonials() {
               type="button"
               aria-label={`Ir para o slide ${index + 1}`}
               onClick={() => {
-                setDirection(index > currentPage ? 1 : -1);
+                setDirection(index > safeCurrentPage ? 1 : -1);
                 setCurrentPage(index);
               }}
               className={`h-2.5 rounded-full transition-all ${
-                index === currentPage ? "w-8 bg-AzulP" : "w-2.5 bg-AzulP/25 hover:bg-AzulP/45"
+                index === safeCurrentPage ? "w-8 bg-AzulP" : "w-2.5 bg-AzulP/25 hover:bg-AzulP/45"
               }`}
             />
           ))}

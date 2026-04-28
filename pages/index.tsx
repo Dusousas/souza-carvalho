@@ -1,3 +1,4 @@
+import Head from "next/head";
 import About from "@/components/About";
 import Attorneys from "@/components/Attorneys";
 import Contact from "@/components/Contact";
@@ -10,14 +11,21 @@ import Testimonials from "@/components/Testimonials";
 export default function Home() {
   return (
     <>
-    <Hero />
-    <About />
-    <Services />
-    <Attorneys />
-    <Process  />
-    <CtaLogo />
-    <Testimonials />
-    <Contact />
+      <Head>
+        <title>Souza & Carvalho - Advocacia e Assessoria Juridica</title>
+        <meta
+          name="description"
+          content="Souza & Carvalho - Advocacia e Assessoria Juridica"
+        />
+      </Head>
+      <Hero />
+      <About />
+      <Services />
+      <Attorneys />
+      <Process />
+      <CtaLogo />
+      <Testimonials />
+      <Contact />
     </>
   );
 }
